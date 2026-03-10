@@ -2,11 +2,13 @@
 
 ## To start running pkg :
 
+The package runs initially on ros2 jazzy , success for other distributions not guaranteed
+
 ```zsh
-micromamba activate ds
-ros
-cd ~/ros2_ws
-sws
+micromamba activate $YOUR_VIRTUAL_ENV$
+source /opt/ros/jazzy/setup.zsh
+cd ~/$YOUR_ROS2_WORKSPACE$
+source ~/$YOUR_ROS2_WORKSPACE$/install/setup.zsh
 #1st terminal
 ros2 run turtlesim turtlesim_node
 #2nd terminal
@@ -30,7 +32,7 @@ ros2 topic pub --once /turtle1/llm_request std_msgs/msg/String "{data: 'stop dra
 killing on auto : stop ollama from systemctl
 
 ```zsh
-ollstop
+sudo systemctl stop ollama
 ```
 
 for random enemy pose generator :
