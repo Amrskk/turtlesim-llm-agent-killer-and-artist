@@ -5,9 +5,11 @@
 The package runs initially on ros2 jazzy , success for other distributions not guaranteed
 
 ```zsh
-micromamba activate $YOUR_VIRTUAL_ENV$
-source /opt/ros/jazzy/setup.zsh
+cd ~/$YOUR_ROS2_WORKSPACE$/src
+git clone -b master https://github.com/Amrskk/turtlesim-llm-agent-killer-and-artist.git
 cd ~/$YOUR_ROS2_WORKSPACE$
+micromamba activate $YOUR_VIRTUAL_ENV$ && colcon build --packages-select turtlesimLLM --symlink-install
+source /opt/ros/jazzy/setup.zsh
 source ~/$YOUR_ROS2_WORKSPACE$/install/setup.zsh
 #1st terminal
 ros2 run turtlesim turtlesim_node
